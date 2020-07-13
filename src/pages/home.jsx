@@ -2,9 +2,11 @@ import React from 'react';
 
 export default () => {
 
-	return(
+	return (
 		<>
-			hello from home
+			<svg id="logo" aria-hidden="true" role="img">
+				<use href="#homeIcon" />
+			</svg>
 		</>
 	)
 }
