@@ -5,30 +5,36 @@ import SvgHandler from '../svg-handler';
 
 import './index.scss';
 
-const Nav = ({ title, items }) => (
-	<ul className='nav'>
-		{title && <p className='nav-title error'>{title}</p>}
+const Nav = ({ title, items, classes }) => {
+	const classNames = ['nav', ...classes];
 
-		{
-			items.map((item) => (
-				<li key={item.text}>
-					<NavLink to={item.link ? item.link : 'blank'} activeClassName='active'>
-						{item.icon && <SvgHandler iconId={item.icon} />}
-						<span>{item.text}</span>
-					</NavLink>
-				</li>
-			))
-		}
-	</ul>
-);
+	return (
+		<ul className={classNames.join(' ')}>
+			{title && <p className='error'>{title}</p>}
+
+			{
+				items.map((item) => (
+					<li key={item.text}>
+						<NavLink to={item.link ? item.link : 'blank'} activeClassName='active'>
+							{item.icon && <SvgHandler iconId={item.icon} />}
+							<span>{item.text}</span>
+						</NavLink>
+					</li>
+				))
+			}
+		</ul>
+	);
+};
 
 Nav.defaultProps = {
 	title: null,
+	classes: [],
 };
 
 Nav.propTypes = {
 	title: propTypes.string,
 	items: propTypes.arrayOf(propTypes.object).isRequired,
+	classes: propTypes.arrayOf(propTypes.string),
 };
 
 export default Nav;

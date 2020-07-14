@@ -3,6 +3,7 @@ import SvgHandler from '../svg-handler';
 import Nav from '../nav';
 
 import './index.scss';
+import Button from '../button/index';
 
 const SideBur = () => {
 	const navItems1 = [
@@ -58,8 +59,10 @@ const SideBur = () => {
 			<SvgHandler iconId='logoIcon' classes={['logo']} />
 
 			<Nav items={navItems1} />
-			<Nav title='YOUR LIBRARY' items={navItems2} />
-			<Nav title='PLAYLISTS' items={navItems3} />
+			<Nav title='YOUR LIBRARY' items={navItems2} classes={['nav_secondary']} />
+			<Nav title='PLAYLISTS' items={navItems3} classes={['nav_secondary']} />
+
+			<Button icon='plusCircleIcon'>ADD NEW PLAYLIST</Button>
 		</aside>
 	);
 };

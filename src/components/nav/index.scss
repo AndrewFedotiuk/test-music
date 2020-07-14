@@ -5,21 +5,17 @@ ul.nav {
 	font-weight: bold;
 
 	margin-bottom: 50px;
-	.nav-title {
-		font-size: $font-size;
-	}
+	font-size: $font-size;
 	li a {
 		position: relative;
 		display: flex;
 		align-items: center;
 		color: $secondary2-color;
-		font-size: $font-size;
 		text-decoration: none;
 
 		padding: 10px 0;
 		span {
 			color: $brand-color1;
-			font-size: 14px;
 		}
 
 		&.active {
@@ -39,10 +35,14 @@ ul.nav {
 		}
 
 		&:hover {
-			opacity: 0.7;
+			opacity: $hover-opacity;
 		}
 	}
 	.base-icon {
 		margin-right: 25px;
+	}
+
+	&_secondary {
+		font-size: $font-size2;
 	}
 }
