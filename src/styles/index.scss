@@ -1,12 +1,22 @@
 @import './_particles/vars';
 
-*{
+body{
 	font-family: $base-font;
 	color: $secondary2-color;
+	overflow: hidden;
+}
+
+ul{
+	padding: 0;
+	list-style: none;
 }
 
 footer{
 	min-height: 95px;
 	width: 100%;
 	color: $bg-color;
+}
+
+.error{
+	color: $brand-color2;
 }

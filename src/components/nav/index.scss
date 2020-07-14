@@ -1,0 +1,48 @@
+@import '../../styles/_particles/vars';
+
+ul.nav {
+	text-transform: uppercase;
+	font-weight: bold;
+
+	margin-bottom: 50px;
+	.nav-title {
+		font-size: $font-size;
+	}
+	li a {
+		position: relative;
+		display: flex;
+		align-items: center;
+		color: $secondary2-color;
+		font-size: $font-size;
+		text-decoration: none;
+
+		padding: 10px 0;
+		span {
+			color: $brand-color1;
+			font-size: 14px;
+		}
+
+		&.active {
+			pointer-events: none;
+			.base-icon {
+				color: $brand-color1;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 80px;
+
+				background: linear-gradient(90deg, rgba(90, 188, 97, 0.54) 0%, rgba(90, 188, 97, 0) 84.62%);
+				transform: translateX(calc(-100% + 20px));
+			}
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	.base-icon {
+		margin-right: 25px;
+	}
+}
