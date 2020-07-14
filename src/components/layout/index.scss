@@ -1,0 +1,10 @@
+@import '../../styles/_particles/vars';
+
+.base-layout {
+	display: flex;
+	height: calc(100vh - 95px);
+	.main {
+		width: 100%;
+		background-color: $bg-color;
+	}
+}

@@ -2,4 +2,11 @@
 
 *{
 	font-family: $base-font;
+	color: $secondary2-color;
+}
+
+footer{
+	min-height: 95px;
+	width: 100%;
+	color: $bg-color;
 }
