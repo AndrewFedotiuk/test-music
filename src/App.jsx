@@ -1,10 +1,9 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
-
 
 const Home = lazy(() => import('./pages/home'));
 
-export default () => {
+export default function App() {
 	return (
 		<>
 			<Suspense fallback={<div>Loading...</div>}>

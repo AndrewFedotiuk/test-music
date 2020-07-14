@@ -1,4 +1,4 @@
-import {LOADING_STARTED, LOADING} from './action-types';
+import types from './action-types';
 
 const initialState = {
 	loading: null,
@@ -6,12 +6,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case LOADING_STARTED:
+		case types.LOADING_STARTED:
 			return {
 				...state,
 				loading: false,
 			};
-		case LOADING:
+		case types.LOADING:
 			return {
 				...state,
 				loading: true,

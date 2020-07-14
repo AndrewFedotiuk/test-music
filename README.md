@@ -20,6 +20,12 @@ To create a production build:
 yarn run build-prod
 ```
 
+To lint code:
+
+```sh
+yarn run lint
+```
+
 To clean build:
 
 ```sh
