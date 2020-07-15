@@ -1,26 +1,38 @@
 @import '../../styles/_particles/vars';
 
-.btn {
-	display: inline-block;
+.btn-base {
 	font-weight: 400;
 	border-radius: 6px;
 	padding: 10px;
 	color: $brand-color1;
 	background-color: transparent;
-	border: transparent;
 	line-height: 1.1;
+
+}
+
+.btn {
+	border: transparent;
+	display: inline-block;
 	cursor: pointer;
 	&:hover {
 		opacity: $hover-opacity;
-	}
-	&.has-border{
-		border: 2px solid $brand-color1;
-	}
-	.base-icon {
-		margin-right: 10px;
 	}
 	& > * {
 		text-align: center;
 		vertical-align: middle;
 	}
+
+	&.invert {
+		transform: scaleX(-1);
+		@extend .btn-base;
+	}
+
+	&.has-border {
+		border: 2px solid $brand-color1;
+		@extend .btn-base;
+	}
+	.base-icon {
+		margin-right: 10px;
+	}
+
 }

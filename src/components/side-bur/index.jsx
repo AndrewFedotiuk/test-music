@@ -62,7 +62,7 @@ const SideBur = () => {
 			<Nav title='YOUR LIBRARY' items={navItems2} classes={['nav_secondary']} />
 			<Nav title='PLAYLISTS' items={navItems3} classes={['nav_secondary']} />
 
-			<Button icon='plusCircleIcon'>ADD NEW PLAYLIST</Button>
+			<Button icon='plusCircleIcon' classes={['has-border']}>ADD NEW PLAYLIST</Button>
 		</aside>
 	);
 };

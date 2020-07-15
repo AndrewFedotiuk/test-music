@@ -4,10 +4,10 @@ import SvgHandler from '../svg-handler/index';
 
 import './index.scss';
 
-const Button = ({ children, icon }) => {
-	const classes = children && 'has-border';
+const Button = ({ children, icon, classes }) => {
+	const classNames = ['btn', ...classes];
 	return (
-		<button type='button' className={`btn ${classes}`}>
+		<button type='button' className={classNames.join(' ')}>
 			{icon && <SvgHandler iconId={icon} />}
 			{children && <span>{children}</span>}
 		</button>
@@ -17,11 +17,17 @@ const Button = ({ children, icon }) => {
 Button.defaultProps = {
 	children: null,
 	icon: null,
+	classes: ['btn-base'],
 };
 
 Button.propTypes = {
-	children: propTypes.string,
+	children: propTypes.oneOfType([
+		propTypes.string,
+		propTypes.element,
+		propTypes.node,
+	]),
 	icon: propTypes.string,
+	classes: propTypes.arrayOf(propTypes.string),
 };
 
 export default Button;
