@@ -14,7 +14,6 @@ export default function Layout({ children }) {
 				<div className='main'>
 					<Header />
 					{children}
-					<footer className='footer'>footer</footer>
 				</div>
 			</div>
 

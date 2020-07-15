@@ -2,7 +2,7 @@
 
 header.header{
 	display: flex;
-	margin-right: 60px;
+	margin: 0 60px 100px 0;
 
 	.header-form{
 		flex-basis: 50%;
@@ -12,6 +12,10 @@ header.header{
 		display: flex;
 		justify-content: flex-end;
 		flex-basis: 50%;
+	}
+
+	.avatar{
+		border-radius: $border-radius-circle;
 	}
 
 	.base-icon{

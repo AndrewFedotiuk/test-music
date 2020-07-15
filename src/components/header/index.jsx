@@ -19,7 +19,7 @@ const Header = () => (
 				<span className='notify' />
 			</Button>
 
-			<img src={avatar} alt='Avatar' />
+			<img className='avatar' src={avatar} alt='Avatar' />
 		</div>
 	</header>
 );

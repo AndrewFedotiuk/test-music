@@ -1,0 +1,23 @@
+@import '../../styles/_particles/vars';
+
+.avatar-group {
+	width: 88px;
+	margin-right: 55px;
+	.avatar {
+		height: 88px;
+		margin-bottom: 15px;
+	}
+	.title {
+		font-size: $font-size3;
+		font-weight: bold;
+	}
+
+	.name {
+		font-size: $font-size2;
+	}
+
+	.title,
+	.name {
+		text-align: center;
+	}
+}

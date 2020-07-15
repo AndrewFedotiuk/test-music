@@ -1,0 +1,47 @@
+@import '../../styles/_particles/vars';
+
+.home-page {
+	// .featured{
+	// 	position: relative;
+	// }
+	.banner-wrapper{
+		padding-right: 65px;
+	}
+	.banner {
+		width: 100%;
+		max-width: 1000px;
+		margin-bottom: 55px;
+	}
+	h3 {
+		font-size: $font-size5;
+		margin-bottom: 8px;
+	}
+	.caption {
+		font-size: $font-size;
+		color: $secondary1-color;
+		margin-bottom: 30px;
+	}
+	.chosen-wrapper {
+		display: flex;
+		overflow-y: auto;
+		padding-bottom: 30px;
+	}
+
+	.gradient-wrapper{
+		position: relative;
+	}
+
+	.gradient-overlay{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 48px;
+		height: 100%;
+		background: linear-gradient(270deg, #181E30 0%, rgba(24, 30, 48, 0) 105.47%);
+		// &.invert{
+		// 	left: 0;
+		// 	right: unset;
+		// 	transform: scale(-1);
+		// }
+	}
+}

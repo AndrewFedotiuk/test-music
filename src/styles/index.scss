@@ -1,24 +1,24 @@
 @import './_particles/vars';
 
-body{
+body {
 	font-family: $base-font;
 	color: $secondary2-color;
 	overflow: hidden;
 }
 
-ul{
+ul {
 	padding: 0;
 	list-style: none;
 }
 
-p{
+p {
 	margin: 0;
 }
 
-.error{
+.error {
 	color: $brand-color2;
 }
 
-.disabled{
+.disabled {
 	pointer-events: none;
 }
