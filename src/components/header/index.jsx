@@ -10,16 +10,16 @@ const Header = () => (
 	<header className='header'>
 		<HeaderForm />
 
-		<div className='avatar-wrapper'>
+		<div className='header-avatar-wrapper'>
 			<Button>
 				<SvgHandler iconId='settingsIcon' />
 			</Button>
 			<Button>
 				<SvgHandler iconId='ballIcon' classes={['with-alert']} />
-				<span className='notify' />
+				<span className='header-notify' />
 			</Button>
 
-			<img className='avatar' src={avatar} alt='Avatar' />
+			<img className='header-avatar' src={avatar} alt='Avatar' />
 		</div>
 	</header>
 );

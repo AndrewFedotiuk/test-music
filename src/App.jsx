@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router';
 import Layout from './components/layout';
 
 const Home = lazy(() => import('./pages/home'));
+const Browse = lazy(() => import('./pages/browse'));
 
 export default function App() {
 	return (
@@ -13,6 +14,10 @@ export default function App() {
 						exact
 						path='/'
 						render={() => <Home />}
+					/>
+					<Route
+						path='/browse'
+						render={() => <Browse />}
 					/>
 				</Switch>
 			</Suspense>

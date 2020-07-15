@@ -1,21 +1,15 @@
 import React from 'react';
-import avatar from '../../assets/images/User.png';
 import SvgHandler from '../svg-handler';
+import AvatarWithText from '../avatar-with-text/index';
+import Button from '../button/index';
 
 import './index.scss';
-import Button from '../button/index';
 
 const Player = () => (
 	<footer className='player'>
-		<div className='d-flex avatar-wrapper'>
-			<img className='avatar' src={avatar} alt='Avatar' />
-			<div className='text-wrapper'>
-				<p className='title'>Say So</p>
-				<p className='caption'>Doja Cat</p>
-			</div>
-		</div>
+		<AvatarWithText />
 
-		<div className='d-flex play-buttons-wrapper'>
+		<div className='d-flex player-play-buttons-wrapper'>
 			<Button>
 				<SvgHandler iconId='arrowLeftIcon' />
 			</Button>
@@ -27,7 +21,7 @@ const Player = () => (
 			</Button>
 		</div>
 
-		<div className='d-flex range-wrapper'>
+		<div className='d-flex player-range-wrapper'>
 			<span>1:22</span>
 			<div className='input-wrapper'>
 				<div className='filled-range' style={{ width: '40%' }} />
@@ -36,7 +30,7 @@ const Player = () => (
 			<span>4:38</span>
 		</div>
 
-		<div className='d-flex controls-wrapper'>
+		<div className='d-flex player-controls-wrapper'>
 			<Button>
 				<SvgHandler iconId='volumeIcon' />
 			</Button>

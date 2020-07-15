@@ -15,6 +15,10 @@
 		transform: translateY(-50%);
 	}
 
+	label{
+		width: 100%;
+	}
+
 	input{
 		width: 100%;
 		color: inherit;
@@ -22,5 +26,6 @@
 		border: 1px solid $secondary1-color;
 		border-radius: $border-radius;
 		padding: 8px 40px;
+		box-sizing: border-box;
 	}
 }

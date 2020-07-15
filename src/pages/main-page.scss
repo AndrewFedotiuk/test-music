@@ -1,0 +1,45 @@
+@import '../styles/_particles/vars';
+
+.page {
+	// overflow-x: auto;
+	// height: calc(100% - 45px);
+
+	h2 {
+		font-size: $font-size6;
+	}
+
+	h3 {
+		font-size: $font-size5;
+		margin-bottom: 8px;
+	}
+
+	.chosen-wrapper {
+		display: flex;
+		overflow-y: auto;
+		padding-bottom: 30px;
+	}
+
+	.caption {
+		font-size: $font-size;
+		color: $secondary1-color;
+		margin-bottom: 30px;
+	}
+
+	.gradient-wrapper {
+		position: relative;
+	}
+
+	.gradient-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 48px;
+		height: 100%;
+		background: linear-gradient(270deg, #181e30 0%, rgba(24, 30, 48, 0) 105.47%);
+		// &.invert{
+		// 	left: 0;
+		// 	right: unset;
+		// 	transform: scale(-1);
+		// }
+	}
+}

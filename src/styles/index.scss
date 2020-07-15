@@ -4,6 +4,7 @@ body {
 	font-family: $base-font;
 	color: $secondary2-color;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 ul {

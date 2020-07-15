@@ -13,7 +13,7 @@ const SideBur = () => {
 			text: 'home',
 		},
 		{
-			link: 'search',
+			link: '/browse',
 			icon: 'searchIcon',
 			text: 'browse',
 		},
@@ -58,11 +58,13 @@ const SideBur = () => {
 		<aside className='side-bur'>
 			<SvgHandler iconId='logoIcon' classes={['logo']} />
 
-			<Nav items={navItems1} />
-			<Nav title='YOUR LIBRARY' items={navItems2} classes={['nav_secondary']} />
-			<Nav title='PLAYLISTS' items={navItems3} classes={['nav_secondary']} />
+			<div className='wrapper'>
+				<Nav items={navItems1} />
+				<Nav title='YOUR LIBRARY' items={navItems2} classes={['nav_secondary']} />
+				<Nav title='PLAYLISTS' items={navItems3} classes={['nav_secondary']} />
 
-			<Button icon='plusCircleIcon' classes={['has-border']}>ADD NEW PLAYLIST</Button>
+				<Button icon='plusCircleIcon' classes={['has-border']}>ADD NEW PLAYLIST</Button>
+			</div>
 		</aside>
 	);
 };
