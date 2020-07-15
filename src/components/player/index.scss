@@ -5,7 +5,7 @@ footer.player {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: 95px;
+	height: $footer-height;
 	color: $bg-color;
 	box-sizing: border-box;
 	padding: 25px 50px;
@@ -16,7 +16,7 @@ footer.player {
 	.avatar-wrapper {
 		align-items: center;
 		.avatar {
-			border-radius: 100px;
+			border-radius: $border-radius-circle;
 			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 			margin-right: 15px;
 		}
@@ -39,7 +39,7 @@ footer.player {
 			line-height: 0.4;
 			color: $secondary2-color;
 			background-color: $brand-color1;
-			border-radius: 100px;
+			border-radius: $border-radius-circle;
 			box-shadow: 0px 4px 5px rgba(66, 163, 73, 0.5);
 			padding: 10px;
 			.base-icon {
@@ -64,7 +64,7 @@ footer.player {
 				left: 0;
 				height: 4px;
 				background-color: $brand-color1;
-				border-radius: 10px;
+				border-radius: $border-radius-circle;
 			}
 		}
 		input {
@@ -73,7 +73,7 @@ footer.player {
 			height: 4px;
 			background-color: #8b8e9783;
 			outline: none;
-			border-radius: 100px;
+			border-radius: $border-radius-circle;
 		}
 		input[type='range']::-webkit-slider-thumb {
 			-webkit-appearance: none;
@@ -81,7 +81,7 @@ footer.player {
 			width: 8px;
 			background: $brand-color1;
 			box-shadow: 0 0 0 4px rgba(90, 188, 97, 0.5);
-			border-radius: 10px;
+			border-radius: $border-radius-circle;
 			cursor: pointer;
 			&:hover {
 				opacity: $hover-opacity;

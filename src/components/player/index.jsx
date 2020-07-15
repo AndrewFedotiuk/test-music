@@ -31,7 +31,7 @@ const Player = () => (
 			<span>1:22</span>
 			<div className='input-wrapper'>
 				<div className='filled-range' style={{ width: '40%' }} />
-				<input type='range' min='0' max='1' step='.05' value='.4' />
+				<input readOnly type='range' min='0' max='1' step='.05' value='.4' />
 			</div>
 			<span>4:38</span>
 		</div>

@@ -2,7 +2,7 @@
 
 .btn-base {
 	font-weight: 400;
-	border-radius: 6px;
+	border-radius: $border-radius;
 	padding: 10px;
 	color: $brand-color1;
 	background-color: transparent;
@@ -11,6 +11,7 @@
 }
 
 .btn {
+	position: relative;
 	border: transparent;
 	display: inline-block;
 	cursor: pointer;

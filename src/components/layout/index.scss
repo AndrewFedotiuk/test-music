@@ -2,9 +2,10 @@
 
 .base-layout {
 	display: flex;
-	height: calc(100vh - 95px);
+	height: calc(100vh - #{$footer-height});
 	.main {
 		width: 100%;
 		background-color: $bg-color;
+		padding: 50px 0 50px 40px;
 	}
 }

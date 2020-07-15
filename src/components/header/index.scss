@@ -1,0 +1,30 @@
+@import '../../styles/_particles/vars';
+
+header.header{
+	display: flex;
+	margin-right: 60px;
+
+	.header-form{
+		flex-basis: 50%;
+	}
+
+	.avatar-wrapper{
+		display: flex;
+		justify-content: flex-end;
+		flex-basis: 50%;
+	}
+
+	.base-icon{
+		margin-right: 25px;
+	}
+
+	.notify{
+		position: absolute;
+		top: 7px;
+		left: 28px;
+		width: 8px;
+		height: 8px;
+		background-color: $brand-color2;
+		border-radius: $border-radius-circle;
+	}
+}
