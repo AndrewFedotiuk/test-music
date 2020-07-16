@@ -30,7 +30,7 @@ const HeaderForm = () => {
 		const trimmed = target.value.trim();
 
 		if (trimmed) {
-			dispatch(searchAllPersons());
+			dispatch(searchAllPersons(trimmed));
 		}
 	}
 
