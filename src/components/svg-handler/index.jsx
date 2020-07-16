@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 import './index.scss';
 
-const SvgHandler = ({ iconId, classes }) => {
+const SvgHandler = React.memo(({ iconId, classes }) => {
 	const classNames = ['base-icon', ...classes];
 
 	return (
@@ -11,7 +11,7 @@ const SvgHandler = ({ iconId, classes }) => {
 			<use href={`#${iconId}`} />
 		</svg>
 	);
-};
+});
 
 SvgHandler.defaultProps = {
 	classes: [],

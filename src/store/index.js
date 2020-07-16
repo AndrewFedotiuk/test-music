@@ -7,13 +7,13 @@ export const composeEnhancers = composeWithDevTools({
 	// Specify name here, actionsBlacklist, actionsCreators and other options if needed
 });
 
-export const search = 'http://api.tvmaze.com/search/shows?q=';
+export const searchAll = 'https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=';
 export const singleSearch = 'http://api.tvmaze.com/shows/';
 
 const store = createStore(rootReducer,
 	composeEnhancers(
 		applyMiddleware(
-			ReduxThunk.withExtraArgument({ search, singleSearch }),
+			ReduxThunk.withExtraArgument({ searchAll, singleSearch }),
 		),
 	));
 

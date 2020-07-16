@@ -1,21 +1,27 @@
 import types from './action-types';
 
 const initialState = {
-	loading: null,
+	searchWord: null,
+	searchResult: [],
+	error: null,
 };
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-		case types.LOADING_STARTED:
+		case types.SAVE_SEARCH_VALUE:
 			return {
 				...state,
-				loading: false,
-			};
-		case types.LOADING:
-			return {
-				...state,
-				loading: true,
 				searchWord: action.payload,
+			};
+		case types.SET_ERROR:
+			return {
+				...state,
+				error: action.payload,
+			};
+		case types.SET_SEARCH_RESULT:
+			return {
+				...state,
+				searchResult: action.payload,
 			};
 		default:
 			return state;

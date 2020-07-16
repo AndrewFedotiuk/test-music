@@ -10,15 +10,29 @@
 	border-radius: $border-radius;
 	box-sizing: border-box;
 
-	padding: 15px;
+	overflow: auto;
 	transform: translateY(100%);
 	z-index: $z-index-dropdown;
 
 	&-item {
 		display: flex;
 		align-items: center;
+		padding: 7px 15px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $sidebar-color;
+		}
+
+		img {
+			width: 24px;
+			height: 24px;
+			margin-right: 25px;
+		}
 
 		.base-icon {
+			width: 14px;
+			height: 14px;
 			background-color: $sidebar-color;
 			padding: 5px;
 			color: $secondary2-color;
