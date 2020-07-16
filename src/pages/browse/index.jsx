@@ -11,6 +11,10 @@ const Browse = () => (
 		<section className='tracks'>
 			<div className='h2-wrapper'>
 				<h2>Most Loved Tracks</h2>
+
+				<Button>
+					<SvgHandler iconId='moreHorizontalIcon' />
+				</Button>
 			</div>
 
 			<div className='track-wrapper'>
@@ -33,8 +37,22 @@ const Browse = () => (
 			</div>
 
 			<div className='browse-page-hide-on-mobile'>
-				<div className='wrapper'>
-					<h3>Albums</h3>
+				<div className='h3-wrapper'>
+					<div className='wrapper'>
+						<h3>Albums</h3>
+
+						<Button>
+							<SvgHandler iconId='arrowLeftIcon' />
+						</Button>
+
+						<Button classes={['invert']}>
+							<SvgHandler iconId='arrowLeftIcon' />
+						</Button>
+					</div>
+
+					<Button classes={['person-menu-btn']}>
+						<SvgHandler iconId='moreHorizontalIcon' />
+					</Button>
 				</div>
 				<div className='gradient-wrapper'>
 					<ul className='chosen-wrapper'>
@@ -43,7 +61,6 @@ const Browse = () => (
 					<div className='gradient-overlay' />
 				</div>
 			</div>
-
 
 		</section>
 	</div>

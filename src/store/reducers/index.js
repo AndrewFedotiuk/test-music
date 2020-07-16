@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import main from './main';
+import search from './search';
 
 const reducer = combineReducers({
-	main,
+	search,
 });
 
 export default reducer;

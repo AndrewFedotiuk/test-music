@@ -45,6 +45,10 @@
 
 	.person {
 		overflow: auto;
+		&-menu-btn{
+			margin-right: 30px;
+			background-color: transparent;
+		}
 		@include media-breakpoint-down($sm) {
 			order: 0;
 			overflow: unset;
@@ -73,6 +77,31 @@
 	&-hide-on-mobile {
 		@include media-breakpoint-down($xs) {
 			display: none !important;
+		}
+	}
+
+	.h2-wrapper{
+		display: flex;
+		justify-content: space-between;
+
+		.btn{
+			margin-right: 80px;
+			color: $secondary2-color;
+		}
+	}
+
+	.h3-wrapper{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.wrapper{
+			display: flex;
+			align-items: center;
+		}
+
+		.btn{
+			color: $secondary2-color;
 		}
 	}
 }

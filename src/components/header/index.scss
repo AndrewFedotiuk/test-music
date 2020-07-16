@@ -13,15 +13,15 @@
 		flex-basis: 50%;
 	}
 
-	.base-icon {
-		margin-right: 25px;
-	}
-
 	&-avatar-wrapper {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		flex-basis: 50%;
+
+		.btn {
+			margin-right: 20px;
+		}
 
 		@include media-breakpoint-down($md) {
 			justify-content: space-between;
@@ -45,7 +45,7 @@
 
 	&-for-mobile {
 		display: flex;
-		width: calc(50% + 73px);
+		width: calc(50% + 35px);
 		justify-content: space-between;
 		@include media-breakpoint-up($md) {
 			display: none;

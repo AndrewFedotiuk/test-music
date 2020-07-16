@@ -1,6 +1,6 @@
 @import '../../styles/_particles/vars';
 
-.header-form{
+.header-form {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -8,18 +8,20 @@
 	font-size: $font-size;
 	font-weight: bold;
 
-	.base-icon{
-		position: absolute;
-		top: 50%;
-		left: 10px;
-		transform: translateY(-50%);
+	&-input-label {
+		.base-icon {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translateY(-50%);
+		}
 	}
 
-	label{
+	label {
 		width: 100%;
 	}
 
-	input{
+	input {
 		width: 100%;
 		color: inherit;
 		background-color: transparent;
