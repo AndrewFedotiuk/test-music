@@ -7,7 +7,6 @@
 	color: $brand-color1;
 	background-color: transparent;
 	line-height: 1.1;
-
 }
 
 .btn {
@@ -30,10 +29,9 @@
 
 	&.has-border {
 		border: 2px solid $brand-color1;
+		.base-icon {
+			margin-right: 10px;
+		}
 		@extend .btn-base;
 	}
-	.base-icon {
-		margin-right: 10px;
-	}
-
 }

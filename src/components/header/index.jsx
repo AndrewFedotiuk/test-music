@@ -11,13 +11,20 @@ const Header = () => (
 		<HeaderForm />
 
 		<div className='header-avatar-wrapper'>
-			<Button>
-				<SvgHandler iconId='settingsIcon' />
-			</Button>
-			<Button>
-				<SvgHandler iconId='ballIcon' classes={['with-alert']} />
-				<span className='header-notify' />
-			</Button>
+			<div className='header-for-mobile'>
+				<SvgHandler iconId='menuIcon' />
+				<SvgHandler iconId='logoIcon' classes={['logo']} />
+			</div>
+
+			<div className='header-for-desktop'>
+				<Button>
+					<SvgHandler iconId='settingsIcon' />
+				</Button>
+				<Button>
+					<SvgHandler iconId='ballIcon' classes={['with-alert']} />
+					<span className='header-notify' />
+				</Button>
+			</div>
 
 			<img className='header-avatar' src={avatar} alt='Avatar' />
 		</div>

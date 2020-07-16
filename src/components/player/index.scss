@@ -1,4 +1,5 @@
 @import '../../styles/_particles/vars';
+@import '../../styles/_particles/mixins';
 
 .player {
 	display: flex;
@@ -25,7 +26,7 @@
 			border-radius: $border-radius-circle;
 			box-shadow: 0px 4px 5px rgba(66, 163, 73, 0.5);
 			padding: 10px;
-			transform: scale(.9);
+			transform: scale(0.9);
 			.base-icon {
 				margin: 0;
 			}
@@ -72,21 +73,47 @@
 				opacity: $hover-opacity;
 			}
 		}
+
+		&.d-flex {
+			@include media-breakpoint-down($md) {
+				display: none;
+			}
+		}
 	}
 
-	&-controls-wrapper{
+	&-controls-wrapper {
 		align-items: center;
 		justify-content: space-between;
 		min-width: 75px;
-		.btn{
+		.btn {
 			color: $secondary1-color;
 		}
-		.base-icon{
-			width: 16px;
-			height: 16px;
-			&:hover{
+		.base-icon {
+			@include media-breakpoint-up($xs) {
+				width: 16px;
+				height: 16px;
+			}
+			padding: 0 5px;
+			&:hover {
 				color: $brand-color1;
 			}
 		}
+	}
+
+	&-hide-on-mobile {
+		@include media-breakpoint-down($xs) {
+			display: none!important;
+		}
+	}
+
+	&-hide-on-desktop{
+		@include media-breakpoint-up($xs) {
+			display: none!important;
+		}
+	}
+
+	@include media-breakpoint-down($xs) {
+		height: $footer-height-xs;
+		padding: 8px;
 	}
 }

@@ -1,17 +1,40 @@
-.browse-page{
-	display: flex;
+@import '../../styles/_particles/vars';
+@import '../../styles/_particles/mixins';
 
-	.tracks, .person{
-		flex-basis: 50%;
+.browse-page {
+	display: flex;
+	height: calc(100% - 15px);
+
+	@include media-breakpoint-down($md) {
+		height: calc(100% - 65px);
 	}
 
-	.track{
+	@include media-breakpoint-down($sm) {
+		flex-direction: column;
+		overflow: auto;
+	}
+
+	.tracks {
+		margin-bottom: 50px;
+		@include media-breakpoint-down($sm) {
+			order: 1;
+		}
+	}
+
+	.tracks,
+	.person {
+		@include media-breakpoint-up($sm) {
+			flex-basis: 50%;
+		}
+	}
+
+	.track {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 
-	.duration-wrapper{
+	.duration-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -20,19 +43,36 @@
 		margin-right: 80px;
 	}
 
-	.person{
+	.person {
 		overflow: auto;
+		@include media-breakpoint-down($sm) {
+			order: 0;
+			overflow: unset;
+		}
 	}
 
-	.image-wrapper{
-		max-width: 500px;
-		max-height: 390px;
+	.image-wrapper {
 		margin-right: 30px;
-		overflow: hidden;
-		border-radius: 16px;
 
-		img{
+		@include media-breakpoint-down($sm) {
+			margin: 0;
+		}
+		img {
 			width: 100%;
+			max-width: 500px;
+			max-height: 390px;
+			border-radius: 16px;
+			object-fit: cover;
+
+			@include media-breakpoint-down($xs) {
+				max-height: 160px;
+			}
+		}
+	}
+
+	&-hide-on-mobile {
+		@include media-breakpoint-down($xs) {
+			display: none !important;
 		}
 	}
 }

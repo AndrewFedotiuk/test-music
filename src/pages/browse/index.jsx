@@ -16,7 +16,7 @@ const Browse = () => (
 			<div className='track-wrapper'>
 				<div className='track'>
 					<AvatarWithText />
-					<div className='duration-wrapper'>
+					<div className='duration-wrapper browse-page-hide-on-mobile'>
 						<span>4:22</span>
 						<Button>
 							<SvgHandler iconId='plusCircleIcon' />
@@ -31,15 +31,20 @@ const Browse = () => (
 			<div className='image-wrapper'>
 				<img src='https://edm.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY2MzgwODY0MTMxODM1NTgz/the-prodigy.jpg' alt='musician' />
 			</div>
-			<div className='wrapper'>
-				<h3>Albums</h3>
+
+			<div className='browse-page-hide-on-mobile'>
+				<div className='wrapper'>
+					<h3>Albums</h3>
+				</div>
+				<div className='gradient-wrapper'>
+					<ul className='chosen-wrapper'>
+						{new Array(7).fill('').map(() => <li key={Math.random()}><AvatarWithText classes={['vertical']} /></li>)}
+					</ul>
+					<div className='gradient-overlay' />
+				</div>
 			</div>
-			<div className='gradient-wrapper'>
-				<ul className='chosen-wrapper'>
-					{new Array(7).fill('').map(() => <li key={Math.random()}><AvatarWithText classes={['vertical']} /></li>)}
-				</ul>
-				<div className='gradient-overlay' />
-			</div>
+
+
 		</section>
 	</div>
 );

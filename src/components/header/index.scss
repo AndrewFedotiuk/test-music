@@ -1,28 +1,39 @@
 @import '../../styles/_particles/vars';
+@import '../../styles/_particles/mixins';
 
-.header{
+.header {
 	display: flex;
 	margin: 0 60px 20px 0;
 
-	.header-form{
+	@include media-breakpoint-down($xs) {
+		margin-right: 0;
+	}
+
+	.header-form {
 		flex-basis: 50%;
 	}
 
-	.base-icon{
+	.base-icon {
 		margin-right: 25px;
 	}
 
-	&-avatar-wrapper{
+	&-avatar-wrapper {
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		flex-basis: 50%;
+
+		@include media-breakpoint-down($md) {
+			justify-content: space-between;
+			margin-bottom: 15px;
+		}
 	}
 
-	&-avatar{
+	&-avatar {
 		border-radius: $border-radius-circle;
 	}
 
-	&-notify{
+	&-notify {
 		position: absolute;
 		top: 7px;
 		left: 28px;
@@ -30,5 +41,24 @@
 		height: 8px;
 		background-color: $brand-color2;
 		border-radius: $border-radius-circle;
+	}
+
+	&-for-mobile {
+		display: flex;
+		width: calc(50% + 73px);
+		justify-content: space-between;
+		@include media-breakpoint-up($md) {
+			display: none;
+		}
+	}
+
+	&-for-desktop {
+		@include media-breakpoint-down($md) {
+			display: none;
+		}
+	}
+
+	@include media-breakpoint-down($md) {
+		flex-direction: column-reverse;
 	}
 }

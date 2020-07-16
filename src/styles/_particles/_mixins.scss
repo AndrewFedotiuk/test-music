@@ -1,0 +1,9 @@
+@import './vars';
+
+@mixin media-breakpoint-down($breakpoint){
+	@media (max-width: $breakpoint) { @content; }
+}
+
+@mixin media-breakpoint-up($breakpoint){
+	@media (min-width: $breakpoint) { @content; }
+}

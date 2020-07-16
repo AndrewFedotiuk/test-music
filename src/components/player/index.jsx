@@ -9,7 +9,7 @@ const Player = () => (
 	<footer className='player'>
 		<AvatarWithText />
 
-		<div className='d-flex player-play-buttons-wrapper'>
+		<div className='d-flex player-play-buttons-wrapper player-hide-on-mobile'>
 			<Button>
 				<SvgHandler iconId='arrowLeftIcon' />
 			</Button>
@@ -21,7 +21,7 @@ const Player = () => (
 			</Button>
 		</div>
 
-		<div className='d-flex player-range-wrapper'>
+		<div className='d-flex player-range-wrapper player-hide-on-mobile'>
 			<span>1:22</span>
 			<div className='input-wrapper'>
 				<div className='filled-range' style={{ width: '40%' }} />
@@ -30,13 +30,23 @@ const Player = () => (
 			<span>4:38</span>
 		</div>
 
-		<div className='d-flex player-controls-wrapper'>
+		<div className='d-flex player-controls-wrapper player-hide-on-mobile'>
 			<Button>
 				<SvgHandler iconId='volumeIcon' />
 			</Button>
 
 			<Button>
 				<SvgHandler iconId='repeatIcon' />
+			</Button>
+		</div>
+
+		<div className='d-flex player-controls-wrapper player-hide-on-desktop'>
+			<Button>
+				<SvgHandler iconId='playIcon' />
+			</Button>
+
+			<Button>
+				<SvgHandler iconId='playNextIcon' />
 			</Button>
 		</div>
 	</footer>
