@@ -14,11 +14,13 @@
 	transform: translateY(100%);
 	z-index: $z-index-dropdown;
 
-	&-item {
+	&-item a{
 		display: flex;
 		align-items: center;
 		padding: 7px 15px;
+		color: $secondary1-color;
 		cursor: pointer;
+		text-decoration: none;
 
 		&:hover {
 			background-color: $sidebar-color;

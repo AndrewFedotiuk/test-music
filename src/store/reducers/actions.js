@@ -15,6 +15,11 @@ export const setError = (error) => ({
 	payload: error,
 });
 
+export const setPerson = (person) => ({
+	type: types.SET_PERSON,
+	payload: person,
+});
+
 export const searchAllPersons = (word) => async (dispatch, getState, { searchAll }) => {
 	dispatch(saveSearchValue(word));
 

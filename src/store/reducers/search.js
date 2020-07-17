@@ -4,6 +4,7 @@ const initialState = {
 	searchWord: null,
 	searchResult: [],
 	error: null,
+	selectedPerson: null,
 };
 
 export default (state = initialState, action) => {
@@ -22,6 +23,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				searchResult: action.payload,
+			};
+		case types.SET_PERSON:
+			return {
+				...state,
+				selectedPerson: action.payload,
 			};
 		default:
 			return state;

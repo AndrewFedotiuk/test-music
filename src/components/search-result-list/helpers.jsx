@@ -10,4 +10,4 @@ export default function sortEqual(str, searchWord) {
 			{suffix && <span className='postfix'>{suffix}</span>}
 		</p>
 	);
-};
+}

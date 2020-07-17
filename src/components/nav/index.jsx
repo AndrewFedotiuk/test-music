@@ -15,7 +15,12 @@ const Nav = ({ title, items, classes }) => {
 			{
 				items.map((item) => (
 					<li key={item.text}>
-						<NavLink to={item.link ? item.link : 'blank'} exact activeClassName='active' className={item.link ? '' : 'disabled'}>
+						<NavLink
+							to={item.link ? item.link : 'blank'}
+							exact={item.link === '/'}
+							activeClassName='active'
+							className={item.link ? '' : 'disabled'}
+						>
 							{item.icon && <SvgHandler iconId={item.icon} />}
 							<span>{item.text}</span>
 						</NavLink>
