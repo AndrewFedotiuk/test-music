@@ -16,7 +16,7 @@ const Browse = React.memo(() => {
 	const location = useLocation();
 
 	useEffect(() => {
-		if ((!selectedPerson && currentId) || (currentId && (selectedPerson !== currentId))) {
+		if (currentId && selectedPerson?.playerId !== currentId) {
 			dispatch(searchSinglePerson(currentId));
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps

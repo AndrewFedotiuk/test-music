@@ -2,7 +2,7 @@
 @import '../../../styles/_particles/mixins';
 
 .details-wrapper {
-	overflow: auto;
+	overflow: hidden;
 	&-btn{
 		margin-right: 30px;
 		background-color: transparent;

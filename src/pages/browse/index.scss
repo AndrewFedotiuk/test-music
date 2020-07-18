@@ -3,11 +3,8 @@
 
 .browse-page {
 	display: flex;
-	height: calc(100% - 15px);
-
-	@include media-breakpoint-down($md) {
-		height: calc(100% - 65px);
-	}
+	overflow: auto;
+	height: calc(100% - 70px);
 
 	@include media-breakpoint-down($sm) {
 		flex-direction: column;

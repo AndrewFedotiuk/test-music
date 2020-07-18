@@ -42,7 +42,8 @@ const HeaderForm = () => {
 		}
 	}
 
-	function focusHandler() {
+	function focusHandler(e) {
+		e.preventDefault();
 		setState({
 			...state,
 			showList: true,
