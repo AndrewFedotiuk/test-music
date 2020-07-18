@@ -1,5 +1,7 @@
 # test-music
 
+site url - https://elastic-curie-72b1d2.netlify.app
+
 ## Building and running on localhost:1234
 
 First install dependencies:
