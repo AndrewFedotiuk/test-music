@@ -8,12 +8,12 @@ export const composeEnhancers = composeWithDevTools({
 });
 
 export const searchAll = 'https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=';
-export const singleSearch = 'http://api.tvmaze.com/shows/';
+export const searchSingle = 'https://www.thesportsdb.com/api/v1/json/1/lookupplayer.php?id=';
 
 const store = createStore(rootReducer,
 	composeEnhancers(
 		applyMiddleware(
-			ReduxThunk.withExtraArgument({ searchAll, singleSearch }),
+			ReduxThunk.withExtraArgument({ searchAll, searchSingle }),
 		),
 	));
 

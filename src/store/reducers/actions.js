@@ -27,7 +27,17 @@ export const searchAllPersons = (word) => async (dispatch, getState, { searchAll
 		.then((response) => response.json())
 		.then((data) => dispatch(setSearchResult(data.player)))
 		.catch((error) => {
-			dispatch(setError(error));
-			console.log(error);
+			dispatch(setError(`Server error - ${error}`));
+			console.log(`Server error - ${error}`);
 		});
 };
+
+export const searchSinglePerson = (word) => async (dispatch, getState, { searchSingle }) => fetch(
+	encodeURI(searchSingle.concat(word)),
+)
+	.then((response) => response.json())
+	.then((data) => dispatch(setPerson(data.players[0])))
+	.catch((error) => {
+		dispatch(setError(`Server error - ${error}`));
+		console.log(`Server error - ${error}`);
+	});

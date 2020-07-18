@@ -20,7 +20,7 @@ const SearchResultList = React.memo(({ searchResult, searchWord, closePopup }) =
 			{
 				searchResult.map((person) => (
 					<li className='search-result-list-item' key={person.idPlayer}>
-						<NavLink to={`./browse?${person.idPlayer}`} onClick={() => goToHandler(person)}>
+						<NavLink to={`./browse?personId=${person.idPlayer}`} onClick={() => goToHandler(person)}>
 							{
 								person.strThumb
 									? <img src={person.strThumb} alt='Person thumbnails' />

@@ -36,10 +36,12 @@ const HeaderForm = () => {
 	}
 
 	function leaveHandler() {
-		setState({
-			...state,
-			showList: false,
-		});
+		if (state.showList) {
+			setState({
+				...state,
+				showList: false,
+			});
+		}
 	}
 
 	function focusHandler() {
@@ -50,8 +52,9 @@ const HeaderForm = () => {
 	}
 
 	return (
-		<ClickOutside callback={leaveHandler}>
-			<form className='header-form' onSubmit={submitForm}>
+
+		<ClickOutside callback={leaveHandler} className='header-form'>
+			<form className='' onSubmit={submitForm}>
 				<label className='header-form-input-label' htmlFor='headerFormInput'>
 					<SvgHandler iconId='searchIcon' />
 					<input

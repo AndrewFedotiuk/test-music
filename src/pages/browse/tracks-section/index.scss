@@ -1,0 +1,13 @@
+@import '../../../styles/_particles/vars';
+@import '../../../styles/_particles/mixins';
+
+.tracks-section {
+	overflow: auto;
+	@include media-breakpoint-down($sm) {
+		order: 1;
+	}
+
+	.temporary-block {
+		padding: 30px 50px 0 0;
+	}
+}

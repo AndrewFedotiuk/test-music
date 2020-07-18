@@ -14,15 +14,8 @@
 		overflow: auto;
 	}
 
-	.tracks {
-		margin-bottom: 50px;
-		@include media-breakpoint-down($sm) {
-			order: 1;
-		}
-	}
-
-	.tracks,
-	.person {
+	.tracks-section,
+	.details-wrapper {
 		@include media-breakpoint-up($sm) {
 			flex-basis: 50%;
 		}
@@ -43,17 +36,7 @@
 		margin-right: 80px;
 	}
 
-	.person {
-		overflow: auto;
-		&-menu-btn{
-			margin-right: 30px;
-			background-color: transparent;
-		}
-		@include media-breakpoint-down($sm) {
-			order: 0;
-			overflow: unset;
-		}
-	}
+
 
 	.image-wrapper {
 		margin-right: 30px;

@@ -1,0 +1,14 @@
+@import '../../../styles/_particles/vars';
+@import '../../../styles/_particles/mixins';
+
+.details-wrapper {
+	overflow: auto;
+	&-btn{
+		margin-right: 30px;
+		background-color: transparent;
+	}
+	@include media-breakpoint-down($sm) {
+		order: 0;
+		overflow: unset;
+	}
+}

@@ -1,69 +1,39 @@
-import React from 'react';
-import Button from '../../components/button/index';
-import SvgHandler from '../../components/svg-handler/index';
-import AvatarWithText from '../../components/avatar-with-text/index';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchSinglePerson } from '../../store/reducers/actions';
+import DetailsWrapper from './details-wrapper/index';
+import TracksSection from './tracks-section/index';
+import { useSearchParamsFromURL } from './helpers';
 
 import '../main-page.scss';
 import './index.scss';
 
-const Browse = () => (
-	<div className='page browse-page'>
-		<section className='tracks'>
-			<div className='h2-wrapper'>
-				<h2>Most Loved Tracks</h2>
+const Browse = React.memo(() => {
+	const { selectedPerson } = useSelector(({ search }) => search);
+	const dispatch = useDispatch();
+	const currentId = useSearchParamsFromURL();
 
-				<Button>
-					<SvgHandler iconId='moreHorizontalIcon' />
-				</Button>
-			</div>
+	useEffect(() => {
+		if (!selectedPerson && currentId) {
+			console.log(currentId);
+			dispatch(searchSinglePerson(currentId));
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-			<div className='track-wrapper'>
-				<div className='track'>
-					<AvatarWithText />
-					<div className='duration-wrapper browse-page-hide-on-mobile'>
-						<span>4:22</span>
-						<Button>
-							<SvgHandler iconId='plusCircleIcon' />
-						</Button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section className='person'>
-			<h2>The Prodigy</h2>
-			<div className='image-wrapper'>
-				<img src='https://edm.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY2MzgwODY0MTMxODM1NTgz/the-prodigy.jpg' alt='musician' />
-			</div>
-
-			<div className='browse-page-hide-on-mobile'>
-				<div className='h3-wrapper'>
-					<div className='wrapper'>
-						<h3>Albums</h3>
-
-						<Button>
-							<SvgHandler iconId='arrowLeftIcon' />
-						</Button>
-
-						<Button classes={['invert']}>
-							<SvgHandler iconId='arrowLeftIcon' />
-						</Button>
-					</div>
-
-					<Button classes={['person-menu-btn']}>
-						<SvgHandler iconId='moreHorizontalIcon' />
-					</Button>
-				</div>
-				<div className='gradient-wrapper'>
-					<ul className='chosen-wrapper'>
-						{new Array(7).fill('').map(() => <li key={Math.random()}><AvatarWithText classes={['vertical']} /></li>)}
-					</ul>
-					<div className='gradient-overlay' />
-				</div>
-			</div>
-
-		</section>
-	</div>
-);
+	return (
+		<div className='page browse-page'>
+			{
+				selectedPerson ? (
+					<>
+						<TracksSection selectedPerson={selectedPerson} />
+						<DetailsWrapper selectedPerson={selectedPerson} />
+					</>
+				)
+					: <h2>Pls type some text to search!</h2>
+			}
+		</div>
+	);
+});
 
 export default Browse;
