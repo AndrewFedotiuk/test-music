@@ -6,6 +6,7 @@ import SvgHandler from '../svg-handler';
 import SearchResultList from '../search-result-list';
 import { searchAllPersons, setPerson } from '../../store/reducers/actions';
 import ClickOutside from '../click-outside';
+import { useSearchParamsFromURL } from '../../custom-hooks';
 
 import './index.scss';
 
@@ -17,16 +18,7 @@ const HeaderForm = () => {
 	const { searchResult, searchWord } = useSelector(({ search }) => search);
 	const dispatch = useDispatch();
 	const history = useHistory();
-
-	function submitForm(e) {
-		e.preventDefault();
-		const [firstResult] = searchResult;
-
-		if (firstResult) {
-			dispatch(setPerson(firstResult));
-			history.push(`/browse?personId=${firstResult.idPlayer}`);
-		}
-	}
+	const currentId = useSearchParamsFromURL();
 
 	// eslint-disable-next-line
 	const debouncedSetValue = useCallback(debounce((value) => dispatch(searchAllPersons(value)), 500), []);
@@ -55,6 +47,17 @@ const HeaderForm = () => {
 			...state,
 			showList: true,
 		});
+	}
+
+	function submitForm(e) {
+		e.preventDefault();
+		const [firstResult] = searchResult;
+
+		if (firstResult && currentId !== firstResult.idPlayer) {
+			dispatch(setPerson(firstResult));
+			history.push(`/browse?personId=${firstResult.idPlayer}`);
+			leaveHandler();
+		}
 	}
 
 	return (
