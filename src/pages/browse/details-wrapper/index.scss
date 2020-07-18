@@ -3,12 +3,18 @@
 
 .details-wrapper {
 	overflow: hidden;
+	margin-bottom: auto;
 	&-btn{
 		margin-right: 30px;
 		background-color: transparent;
 	}
+
 	@include media-breakpoint-down($sm) {
 		order: 0;
 		overflow: unset;
+	}
+
+	.albums-wrapper{
+		margin-bottom: 50px;
 	}
 }

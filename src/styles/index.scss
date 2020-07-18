@@ -1,5 +1,21 @@
 @import './_particles/vars';
 
+* {
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-track {
+		border-radius: $border-radius;
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: $border-radius;
+		background-color: #8b8e9731;
+	}
+}
+
 body {
 	font-family: $base-font;
 	color: $secondary2-color;
@@ -17,7 +33,7 @@ p {
 }
 
 .error {
-	color: $brand-color2!important;
+	color: $brand-color2 !important;
 }
 
 .disabled {

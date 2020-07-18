@@ -13,7 +13,7 @@ const DetailsWrapper = ({ selectedPerson }) => (
 			{selectedPerson.strThumb && <img src={selectedPerson.strThumb} alt='musician' />}
 		</div>
 
-		<div className='browse-page-hide-on-mobile'>
+		<div className='browse-page-hide-on-mobile albums-wrapper'>
 			<div className='h3-wrapper'>
 				<div className='wrapper'>
 					<h3>Albums</h3>

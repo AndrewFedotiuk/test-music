@@ -7,7 +7,8 @@ export default function sortEqual(str, searchWord) {
 		<p className='text'>
 			{
 				textArr.map((text, index) => (
-					<span className={index % 2 ? 'error' : ''}>
+					// eslint-disable-next-line react/no-array-index-key
+					<span className={index % 2 ? 'error' : ''} key={index}>
 						{text}
 					</span>
 				))

@@ -16,25 +16,19 @@ const Browse = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		if (currentId && selectedPerson?.playerId !== currentId) {
+		if (currentId && (selectedPerson?.idPlayer !== currentId)) {
 			dispatch(searchSinglePerson(currentId));
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location]);
 
-	return (
+	return selectedPerson ? (
 		<div className='page browse-page'>
-			{
-				selectedPerson ? (
-					<>
-						<TracksSection selectedPerson={selectedPerson} />
-						<DetailsWrapper selectedPerson={selectedPerson} />
-					</>
-				)
-					: <h2>Pls type some text to search!</h2>
-			}
+			<TracksSection selectedPerson={selectedPerson} />
+			<DetailsWrapper selectedPerson={selectedPerson} />
 		</div>
-	);
+	)
+		: <h2>Pls type some text to search!</h2>;
 };
 
 export default Browse;

@@ -3,12 +3,9 @@
 
 .browse-page {
 	display: flex;
-	overflow: auto;
-	height: 100%;
 
 	@include media-breakpoint-down($sm) {
 		flex-direction: column;
-		overflow: auto;
 	}
 
 	.tracks-section,
