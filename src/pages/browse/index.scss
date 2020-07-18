@@ -4,7 +4,7 @@
 .browse-page {
 	display: flex;
 	overflow: auto;
-	height: calc(100% - 70px);
+	height: 100%;
 
 	@include media-breakpoint-down($sm) {
 		flex-direction: column;

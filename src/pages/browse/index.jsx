@@ -9,7 +9,7 @@ import { useSearchParamsFromURL } from '../../custom-hooks';
 import '../main-page.scss';
 import './index.scss';
 
-const Browse = React.memo(() => {
+const Browse = () => {
 	const { selectedPerson } = useSelector(({ search }) => search);
 	const dispatch = useDispatch();
 	const currentId = useSearchParamsFromURL();
@@ -35,6 +35,6 @@ const Browse = React.memo(() => {
 			}
 		</div>
 	);
-});
+};
 
 export default Browse;
