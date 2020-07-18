@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import SvgHandler from '../svg-handler';
 import SearchResultList from '../search-result-list';
-import { searchAllPersons } from '../../store/reducers/actions';
-import ClickOutside from '../../click-outside';
+import { searchAllPersons, setPerson } from '../../store/reducers/actions';
+import ClickOutside from '../click-outside';
 
 import './index.scss';
 
@@ -13,13 +14,18 @@ const HeaderForm = () => {
 		inputValue: '',
 		showList: false,
 	});
-
 	const { searchResult, searchWord } = useSelector(({ search }) => search);
-
 	const dispatch = useDispatch();
+	const history = useHistory();
 
 	function submitForm(e) {
 		e.preventDefault();
+		const [firstResult] = searchResult;
+
+		if (firstResult) {
+			dispatch(setPerson(firstResult));
+			history.push(`/browse?personId=${firstResult.idPlayer}`);
+		}
 	}
 
 	// eslint-disable-next-line

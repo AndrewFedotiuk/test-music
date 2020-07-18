@@ -15,7 +15,6 @@ const Browse = React.memo(() => {
 
 	useEffect(() => {
 		if (!selectedPerson && currentId) {
-			console.log(currentId);
 			dispatch(searchSinglePerson(currentId));
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps

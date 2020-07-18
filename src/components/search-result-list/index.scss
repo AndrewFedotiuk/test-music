@@ -41,4 +41,8 @@
 			margin-right: 25px;
 		}
 	}
+
+	&:not(:hover) .search-result-list-item:first-child{
+		background-color: $sidebar-color;
+	}
 }
