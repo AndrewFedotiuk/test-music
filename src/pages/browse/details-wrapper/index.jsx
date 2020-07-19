@@ -6,11 +6,11 @@ import AvatarWithText from '../../../components/avatar-with-text/index';
 
 import './index.scss';
 
-const DetailsWrapper = ({ selectedPerson }) => (
+const DetailsWrapper = ({ selectedPerson: { strPlayer, strThumb } }) => (
 	<section className='details-wrapper'>
-		<h2>{selectedPerson.strPlayer}</h2>
+		<h2>{strPlayer}</h2>
 		<div className='image-wrapper'>
-			{selectedPerson.strThumb && <img src={selectedPerson.strThumb} alt='musician' />}
+			{strThumb && <img src={strThumb} alt='musician' />}
 		</div>
 
 		<div className='browse-page-hide-on-mobile albums-wrapper'>

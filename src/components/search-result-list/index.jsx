@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import SvgHandler from '../svg-handler/index';
-import sortEqual from './helpers';
+import selectEqual from './helpers';
 import { setPerson } from '../../store/reducers/actions';
 
 import './index.scss';
@@ -16,24 +16,26 @@ const SearchResultList = React.memo(({ searchResult, searchWord, closePopup }) =
 	}
 
 	return (
-		<ul className='search-result-list'>
-			{
-				searchResult.map((person) => (
-					<li className='search-result-list-item' key={person.idPlayer}>
-						<NavLink to={`./browse?personId=${person.idPlayer}`} onClick={() => goToHandler(person)}>
-							{
-								person.strThumb
-									? <img src={person.strThumb} alt='Person thumbnails' />
-									: <SvgHandler iconId='musicIcon' />
-							}
+		<div className='search-result-list'>
+			<ul>
+				{
+					searchResult.map((person) => (
+						<li className='search-result-list-item' key={person.idPlayer}>
+							<NavLink to={`./browse?personId=${person.idPlayer}`} onClick={() => goToHandler(person)}>
+								{
+									person.strThumb
+										? <img src={person.strThumb} alt='Person thumbnails' />
+										: <SvgHandler iconId='musicIcon' />
+								}
 
-							{sortEqual(person.strPlayer, searchWord)}
-						</NavLink>
+								{selectEqual(person.strPlayer, searchWord)}
+							</NavLink>
 
-					</li>
-				))
-			}
-		</ul>
+						</li>
+					))
+				}
+			</ul>
+		</div>
 	);
 });
 

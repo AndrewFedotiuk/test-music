@@ -6,7 +6,7 @@ import AvatarWithText from '../../../components/avatar-with-text/index';
 
 import './index.scss';
 
-const TracksSection = ({ selectedPerson }) => (
+const TracksSection = ({ selectedPerson: { strTeam, strBirthLocation, strDescriptionEN } }) => (
 	<section className='tracks-section'>
 		<div className='h2-wrapper'>
 			<h2>Most Loved Tracks</h2>
@@ -29,9 +29,9 @@ const TracksSection = ({ selectedPerson }) => (
 		</div>
 
 		<div className='temporary-block'>
-			<h4>{selectedPerson.strTeam}</h4>
-			<h4>{selectedPerson.strBirthLocation}</h4>
-			<h4>{selectedPerson.strDescriptionEN}</h4>
+			<h4>{strTeam}</h4>
+			<h4>{strBirthLocation}</h4>
+			<h4>{strDescriptionEN}</h4>
 		</div>
 	</section>
 );

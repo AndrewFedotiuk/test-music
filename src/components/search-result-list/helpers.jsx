@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function sortEqual(str, searchWord) {
+export default function selectEqual(str, searchWord) {
 	const textArr = str.split(new RegExp(`(${searchWord})`, 'igm'));
 
 	return (
